@@ -40,7 +40,16 @@ class LogInVC: UIViewController {
         alert.addAction(action)
         
         do {
-            try authorizationService.logIn(name: name, password: password)
+            let user = try authorizationService.logIn(name: name, password: password)
+            if user.userType == .regular {
+                let regularUserVC: RegularUserVC = .instantiate(from: .main)
+                regularUserVC.bettingService = BettingService(currentUser: user)
+                navigationController?.pushViewController(regularUserVC, animated: true)
+            } else {
+                let adminVC: AdminVC = .instantiate(from: .main)
+                adminVC.adminService = AdminService(currentUser: user)
+                navigationController?.pushViewController(adminVC, animated: true)
+            }
         } catch AuthorizationError.userNotExist {
             alert.message = "User not exist"
             present(alert, animated: true)

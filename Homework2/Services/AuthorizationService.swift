@@ -19,12 +19,11 @@ enum RegistrationError: Error {
 
 class AuthorizationService {
     private var stoarge = Stoarge.share
-    private var bettingSystem = BettingSystem.share
     
     static var share = AuthorizationService()
     private init() {}
 
-    func logIn(name: String, password: String) throws {
+    func logIn(name: String, password: String) throws -> User {
         guard let user = stoarge.users.first(where: {$0.name == name}) else {
             throw AuthorizationError.userNotExist
         }
@@ -34,7 +33,7 @@ class AuthorizationService {
         guard user.isBanned == false else {
             throw AuthorizationError.isBanned
         }
-        bettingSystem.currentUser = user
+        return user
     }
     
     func registration(name: String, password: String, userType: UserType) throws {
@@ -42,10 +41,6 @@ class AuthorizationService {
             throw RegistrationError.nameIsBusy
         }
         stoarge.users.append(User(name: name, password: password, userType: userType))
-    }
-    
-    func logOut() {
-        bettingSystem.currentUser = nil
     }
     
 }

@@ -16,11 +16,14 @@
 		D937E3382587B1F20079575B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D937E3372587B1F20079575B /* User.swift */; };
 		D937E33B2587B2100079575B /* Stoarge.swift in Sources */ = {isa = PBXBuildFile; fileRef = D937E33A2587B2100079575B /* Stoarge.swift */; };
 		D995DD8F2589D95700D35614 /* AuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D995DD8E2589D95700D35614 /* AuthorizationService.swift */; };
-		D995DD922589D96100D35614 /* BettingSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D995DD912589D96100D35614 /* BettingSystem.swift */; };
-		D995DD952589DB7300D35614 /* Extension+Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = D995DD942589DB7300D35614 /* Extension+Core.swift */; };
+		D995DD922589D96100D35614 /* BettingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D995DD912589D96100D35614 /* BettingService.swift */; };
+		D995DD952589DB7300D35614 /* Extension+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D995DD942589DB7300D35614 /* Extension+UIKit.swift */; };
 		D995DD982589DCBF00D35614 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D995DD972589DCBF00D35614 /* Storyboard.swift */; };
 		D995DD9F2589E40C00D35614 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D995DD9E2589E40C00D35614 /* RegisterVC.swift */; };
 		D995DDA22589E94400D35614 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D995DDA12589E94400D35614 /* TextField.swift */; };
+		D995DDA52589F44C00D35614 /* RegularUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D995DDA42589F44C00D35614 /* RegularUserVC.swift */; };
+		D995DDA82589F45400D35614 /* AdminVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D995DDA72589F45400D35614 /* AdminVC.swift */; };
+		D995DDAF258A255B00D35614 /* AdminService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D995DDAE258A255B00D35614 /* AdminService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,11 +38,14 @@
 		D937E3372587B1F20079575B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D937E33A2587B2100079575B /* Stoarge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stoarge.swift; sourceTree = "<group>"; };
 		D995DD8E2589D95700D35614 /* AuthorizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationService.swift; sourceTree = "<group>"; };
-		D995DD912589D96100D35614 /* BettingSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BettingSystem.swift; sourceTree = "<group>"; };
-		D995DD942589DB7300D35614 /* Extension+Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Core.swift"; sourceTree = "<group>"; };
+		D995DD912589D96100D35614 /* BettingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BettingService.swift; sourceTree = "<group>"; };
+		D995DD942589DB7300D35614 /* Extension+UIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIKit.swift"; sourceTree = "<group>"; };
 		D995DD972589DCBF00D35614 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		D995DD9E2589E40C00D35614 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		D995DDA12589E94400D35614 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		D995DDA42589F44C00D35614 /* RegularUserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularUserVC.swift; sourceTree = "<group>"; };
+		D995DDA72589F45400D35614 /* AdminVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminVC.swift; sourceTree = "<group>"; };
+		D995DDAE258A255B00D35614 /* AdminService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,17 +79,15 @@
 			isa = PBXGroup;
 			children = (
 				D995DD9A2589DD9500D35614 /* Services */,
-				D995DD9B2589DD9D00D35614 /* Extension */,
+				D995DD9C2589DDC000D35614 /* ViewControllers */,
 				D937E3352587B1E20079575B /* Model */,
+				D995DD9B2589DD9D00D35614 /* Extension */,
+				D995DDAA258A145600D35614 /* Storyboards */,
+				D995DDAB258A147000D35614 /* ReusableViews */,
 				D937E3202587AA7D0079575B /* AppDelegate.swift */,
 				D937E3222587AA7D0079575B /* SceneDelegate.swift */,
-				D995DD9C2589DDC000D35614 /* ViewControllers */,
-				D937E3262587AA7D0079575B /* Main.storyboard */,
-				D995DD972589DCBF00D35614 /* Storyboard.swift */,
 				D937E3292587AA7E0079575B /* Assets.xcassets */,
-				D937E32B2587AA7E0079575B /* LaunchScreen.storyboard */,
 				D937E32E2587AA7E0079575B /* Info.plist */,
-				D995DDA12589E94400D35614 /* TextField.swift */,
 			);
 			path = Homework2;
 			sourceTree = "<group>";
@@ -100,7 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				D937E33A2587B2100079575B /* Stoarge.swift */,
-				D995DD912589D96100D35614 /* BettingSystem.swift */,
+				D995DD912589D96100D35614 /* BettingService.swift */,
+				D995DDAE258A255B00D35614 /* AdminService.swift */,
 				D995DD8E2589D95700D35614 /* AuthorizationService.swift */,
 			);
 			path = Services;
@@ -109,7 +114,7 @@
 		D995DD9B2589DD9D00D35614 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				D995DD942589DB7300D35614 /* Extension+Core.swift */,
+				D995DD942589DB7300D35614 /* Extension+UIKit.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -119,8 +124,28 @@
 			children = (
 				D937E3242587AA7D0079575B /* LogInVC.swift */,
 				D995DD9E2589E40C00D35614 /* RegisterVC.swift */,
+				D995DDA42589F44C00D35614 /* RegularUserVC.swift */,
+				D995DDA72589F45400D35614 /* AdminVC.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D995DDAA258A145600D35614 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				D937E3262587AA7D0079575B /* Main.storyboard */,
+				D995DD972589DCBF00D35614 /* Storyboard.swift */,
+				D937E32B2587AA7E0079575B /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		D995DDAB258A147000D35614 /* ReusableViews */ = {
+			isa = PBXGroup;
+			children = (
+				D995DDA12589E94400D35614 /* TextField.swift */,
+			);
+			path = ReusableViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,17 +218,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D995DD952589DB7300D35614 /* Extension+Core.swift in Sources */,
+				D995DD952589DB7300D35614 /* Extension+UIKit.swift in Sources */,
 				D995DDA22589E94400D35614 /* TextField.swift in Sources */,
 				D937E3382587B1F20079575B /* User.swift in Sources */,
 				D937E3252587AA7D0079575B /* LogInVC.swift in Sources */,
+				D995DDA52589F44C00D35614 /* RegularUserVC.swift in Sources */,
 				D937E33B2587B2100079575B /* Stoarge.swift in Sources */,
-				D995DD922589D96100D35614 /* BettingSystem.swift in Sources */,
+				D995DD922589D96100D35614 /* BettingService.swift in Sources */,
 				D995DD8F2589D95700D35614 /* AuthorizationService.swift in Sources */,
 				D937E3212587AA7D0079575B /* AppDelegate.swift in Sources */,
+				D995DDAF258A255B00D35614 /* AdminService.swift in Sources */,
 				D995DD982589DCBF00D35614 /* Storyboard.swift in Sources */,
 				D937E3232587AA7D0079575B /* SceneDelegate.swift in Sources */,
 				D995DD9F2589E40C00D35614 /* RegisterVC.swift in Sources */,
+				D995DDA82589F45400D35614 /* AdminVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

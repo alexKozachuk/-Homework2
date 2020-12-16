@@ -14,13 +14,15 @@ class Stoarge {
     static var share = Stoarge()
     private init() {
         users.append(User(name: "Олександр", password: "1111", userType: .admin))
-        users.append(User(name: "Андрій", password: "1111", userType: .regular))
+        let andrii = User(name: "Андрій", password: "1111", userType: .regular)
+        andrii.bets = ["first", "second", "third"]
+        users.append(andrii)
         let user = User(name: "Дмитро", password: "1111", userType: .regular)
         user.isBanned = true
         users.append(user)
     }
     
-    func getRegularUsers() -> [User] {
+    var regularUsers: [User] {
         return users.filter { $0.userType == .regular }
     }
     

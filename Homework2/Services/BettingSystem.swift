@@ -7,42 +7,35 @@
 
 import Foundation
 
-class BettingSystem {
+class BettingService {
     
-    private var stoarge = Stoarge.share
-    var currentUser: User?
+    var currentUser: User
     
-    static var share = BettingSystem()
-    private init() {}
+    init(currentUser: User) {
+        self.currentUser = currentUser
+    }
     
     func placeBet(bet: String) {
-        guard let currentUser = currentUser else { return }
-        guard currentUser.userType == .regular else { return }
         currentUser.bets.append(bet)
     }
     
-    func getAllBets() -> [String]? {
-        guard let currentUser = currentUser else { return nil }
-        guard currentUser.userType == .regular else { return nil }
+    func getAllBets() -> [String] {
         return currentUser.bets
     }
     
-    func getReguarUsers() -> [User]? {
-        guard let currentUser = currentUser else { return nil }
-        guard currentUser.userType == .admin else { return nil }
-        return stoarge.getRegularUsers()
-    }
-    
-    func banUser(user: User) {
-        guard let currentUser = currentUser else { return }
-        guard currentUser.userType == .admin else { return }
-        user.isBanned = true
-    }
-    
-    func unbanUser(user: User) {
-        guard let currentUser = currentUser else { return }
-        guard currentUser.userType == .admin else { return }
-        user.isBanned = false
-    }
-    
 }
+// private var stoarge = Stoarge.share
+//func getReguarUsers() -> [User]? {
+//    guard currentUser.userType == .admin else { return nil }
+//    return stoarge.getRegularUsers()
+//}
+//
+//func banUser(user: User) {
+//    guard currentUser.userType == .admin else { return }
+//    user.isBanned = true
+//}
+//
+//func unbanUser(user: User) {
+//    guard currentUser.userType == .admin else { return }
+//    user.isBanned = false
+//}
