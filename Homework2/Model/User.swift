@@ -25,8 +25,4 @@ class User {
         self.userType = userType
     }
     
-    func makeBet(_ item: String) {
-        bets.append(item)
-    }
-    
 }
