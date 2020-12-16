@@ -13,6 +13,7 @@ class Stoarge {
     
     static var share = Stoarge()
     private init() {
+        // For testing
         users.append(User(name: "Олександр", password: "1111", userType: .admin))
         let andrii = User(name: "Андрій", password: "1111", userType: .regular)
         andrii.bets = ["first", "second", "third"]

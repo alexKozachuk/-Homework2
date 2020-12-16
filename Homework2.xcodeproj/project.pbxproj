@@ -134,8 +134,8 @@
 			isa = PBXGroup;
 			children = (
 				D937E3262587AA7D0079575B /* Main.storyboard */,
-				D995DD972589DCBF00D35614 /* Storyboard.swift */,
 				D937E32B2587AA7E0079575B /* LaunchScreen.storyboard */,
+				D995DD972589DCBF00D35614 /* Storyboard.swift */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";

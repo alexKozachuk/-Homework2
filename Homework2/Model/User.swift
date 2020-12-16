@@ -25,4 +25,8 @@ class User {
         self.userType = userType
     }
     
+    var title: String {
+        return name + (isBanned ? " (Banned)" : "")
+    }
+    
 }
