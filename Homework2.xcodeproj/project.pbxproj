@@ -16,6 +16,8 @@
 		D937E32D2587AA7E0079575B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D937E32B2587AA7E0079575B /* LaunchScreen.storyboard */; };
 		D937E3382587B1F20079575B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D937E3372587B1F20079575B /* User.swift */; };
 		D937E33B2587B2100079575B /* Stoarge.swift in Sources */ = {isa = PBXBuildFile; fileRef = D937E33A2587B2100079575B /* Stoarge.swift */; };
+		D963AB89258A7582007377C3 /* BasicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963AB88258A7582007377C3 /* BasicTableViewCell.swift */; };
+		D963AB8C258A7590007377C3 /* BasicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D963AB8B258A7590007377C3 /* BasicTableViewCell.xib */; };
 		D995DD8F2589D95700D35614 /* AuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D995DD8E2589D95700D35614 /* AuthorizationService.swift */; };
 		D995DD922589D96100D35614 /* BettingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D995DD912589D96100D35614 /* BettingService.swift */; };
 		D995DD952589DB7300D35614 /* Extension+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D995DD942589DB7300D35614 /* Extension+UIKit.swift */; };
@@ -39,6 +41,8 @@
 		D937E32E2587AA7E0079575B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D937E3372587B1F20079575B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D937E33A2587B2100079575B /* Stoarge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stoarge.swift; sourceTree = "<group>"; };
+		D963AB88258A7582007377C3 /* BasicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicTableViewCell.swift; sourceTree = "<group>"; };
+		D963AB8B258A7590007377C3 /* BasicTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasicTableViewCell.xib; sourceTree = "<group>"; };
 		D995DD8E2589D95700D35614 /* AuthorizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationService.swift; sourceTree = "<group>"; };
 		D995DD912589D96100D35614 /* BettingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BettingService.swift; sourceTree = "<group>"; };
 		D995DD942589DB7300D35614 /* Extension+UIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIKit.swift"; sourceTree = "<group>"; };
@@ -102,6 +106,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		D963AB97258A769B007377C3 /* BasicTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				D963AB88258A7582007377C3 /* BasicTableViewCell.swift */,
+				D963AB8B258A7590007377C3 /* BasicTableViewCell.xib */,
+			);
+			name = BasicTableViewCell;
+			sourceTree = "<group>";
+		};
 		D995DD9A2589DD9500D35614 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +159,7 @@
 		D995DDAB258A147000D35614 /* ReusableViews */ = {
 			isa = PBXGroup;
 			children = (
+				D963AB97258A769B007377C3 /* BasicTableViewCell */,
 				D995DDA12589E94400D35614 /* TextField.swift */,
 			);
 			path = ReusableViews;
@@ -208,6 +222,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D963AB8C258A7590007377C3 /* BasicTableViewCell.xib in Resources */,
 				D937E32D2587AA7E0079575B /* LaunchScreen.storyboard in Resources */,
 				D937E32A2587AA7E0079575B /* Assets.xcassets in Resources */,
 				D937E3282587AA7D0079575B /* Main.storyboard in Resources */,
@@ -229,6 +244,7 @@
 				D91329BB258A4C7600D8DDA4 /* DetailVC.swift in Sources */,
 				D937E33B2587B2100079575B /* Stoarge.swift in Sources */,
 				D995DD922589D96100D35614 /* BettingService.swift in Sources */,
+				D963AB89258A7582007377C3 /* BasicTableViewCell.swift in Sources */,
 				D995DD8F2589D95700D35614 /* AuthorizationService.swift in Sources */,
 				D937E3212587AA7D0079575B /* AppDelegate.swift in Sources */,
 				D995DDAF258A255B00D35614 /* AdminService.swift in Sources */,

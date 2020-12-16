@@ -20,6 +20,7 @@ class DetailVC: UIViewController {
     
     func setupTableView() {
         tableView.dataSource = self
+        tableView.register(type: BasicTableViewCell.self)
     }
     
     @IBAction func backButtonTapped() {
@@ -36,10 +37,8 @@ extension DetailVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item = dataSource[indexPath.row]
-        let cell = UITableViewCell()
-        cell.textLabel?.text = item
-        cell.backgroundColor = .clear
-        cell.textLabel?.textColor = .white
+        let cell = tableView.dequeueReusableCell(with: BasicTableViewCell.self, for: indexPath)
+        cell.nameLabel.text = item
         return cell
     }
     

@@ -18,8 +18,8 @@ class RegularUserVC: UIViewController {
     }
     
     func setupTableView() {
-        tableView.delegate = self
         tableView.dataSource = self
+        tableView.register(type: BasicTableViewCell.self)
     }
     
     @IBAction func logOutButtonTapped(_ sender: Any?) {
@@ -46,10 +46,6 @@ class RegularUserVC: UIViewController {
     
 }
 
-extension RegularUserVC: UITableViewDelegate {
-    
-}
-
 extension RegularUserVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -58,10 +54,8 @@ extension RegularUserVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item = bettingService.bets[indexPath.row]
-        let cell = UITableViewCell()
-        cell.textLabel?.text = item
-        cell.backgroundColor = .clear
-        cell.textLabel?.textColor = .white
+        let cell = tableView.dequeueReusableCell(with: BasicTableViewCell.self, for: indexPath)
+        cell.nameLabel.text = item
         return cell
     }
     

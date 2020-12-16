@@ -23,6 +23,7 @@ class AdminVC: UIViewController {
     func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.register(type: BasicTableViewCell.self)
     }
     
     @IBAction func logOutButtonTapped() {
@@ -41,6 +42,11 @@ extension AdminVC: UITableViewDelegate {
         navigationController?.pushViewController(detailVC, animated: true)
     }
     
+    func tableView(_ tableView: UITableView, didEndEditingRowAt indexPath: IndexPath?) {
+        guard let indexPath = indexPath else {return}
+        tableView.reloadRows(at: [indexPath], with: .none)
+    }
+    
 }
 
 extension AdminVC: UITableViewDataSource {
@@ -49,7 +55,6 @@ extension AdminVC: UITableViewDataSource {
         let user = adminService.regularUsers[indexPath.row]
         let deleteAction = UIContextualAction(style: .destructive, title: nil) { [weak self] (_, _, completionHandler) in
             self?.adminService.banUser(user: user)
-            self?.tableView.reloadData()
             completionHandler(true)
         }
         deleteAction.title = "Ban"
@@ -62,7 +67,6 @@ extension AdminVC: UITableViewDataSource {
         let user = adminService.regularUsers[indexPath.row]
         let deleteAction = UIContextualAction(style: .normal, title: nil) { [weak self] (_, _, completionHandler) in
             self?.adminService.unbanUser(user: user)
-            self?.tableView.reloadData()
             completionHandler(true)
         }
         deleteAction.title = "Unban"
@@ -77,10 +81,8 @@ extension AdminVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item = adminService.regularUsers[indexPath.row]
-        let cell = UITableViewCell()
-        cell.textLabel?.text = item.title
-        cell.backgroundColor = .clear
-        cell.textLabel?.textColor = .white
+        let cell = tableView.dequeueReusableCell(with: BasicTableViewCell.self, for: indexPath)
+        cell.nameLabel.text = item.title
         return cell
     }
     
