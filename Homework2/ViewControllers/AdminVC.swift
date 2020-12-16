@@ -34,10 +34,11 @@ class AdminVC: UIViewController {
 extension AdminVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let item = adminService.regularUsers[indexPath.row]
-        print(item.bets)
+        let item = adminService.regularUsers[indexPath.row].bets
         tableView.deselectRow(at: indexPath, animated: true)
-        // add tableView
+        let detailVC: DetailVC = .instantiate(from: .main)
+        detailVC.dataSource = item
+        navigationController?.pushViewController(detailVC, animated: true)
     }
     
 }

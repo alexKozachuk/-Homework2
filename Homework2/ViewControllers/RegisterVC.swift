@@ -12,6 +12,7 @@ class RegisterVC: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var userTypeSwitch: UISwitch!
+    @IBOutlet weak var applyButton: UIButton!
     
     var authorizationService = AuthorizationService.share
     
@@ -32,6 +33,7 @@ class RegisterVC: UIViewController {
     @IBAction func applyButtonTapped(_ swnder: Any? ) {
         guard let name = nameTextField.text else { return }
         guard let password = passwordTextField.text else { return }
+        guard name != "" || password != "" else { return }
         let userType: UserType = userTypeSwitch.isOn ? .admin : .regular
         
         let alert = UIAlertController(title: "Registration Error", message: nil, preferredStyle: .alert)
@@ -51,6 +53,18 @@ class RegisterVC: UIViewController {
             return
         }
         
+    }
+    
+    @IBAction func textFieldValueChanged(_ sender: Any?) {
+        guard let name = nameTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        if name == "" || password == "" {
+            applyButton.isEnabled = false
+            applyButton.alpha = 0.7
+        } else {
+            applyButton.isEnabled = true
+            applyButton.alpha = 1
+        }
     }
     
 }

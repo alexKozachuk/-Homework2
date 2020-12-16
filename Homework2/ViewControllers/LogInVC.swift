@@ -25,6 +25,7 @@ class LogInVC: UIViewController {
         navigationController?.navigationBar.isHidden = true
         navigationController?.navigationBar.barStyle = .black
     }
+    
 
     func setupTextFileds() {
         nameTextField.attributedPlaceholder = NSAttributedString(string:"Name", attributes: [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1), NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15)])
@@ -34,6 +35,7 @@ class LogInVC: UIViewController {
     @IBAction func signInButtonTapped(_ sender: Any?) {
         guard let name = nameTextField.text else { return }
         guard let password = passwordTextField.text else { return }
+        guard name != "" || password != "" else { return }
         
         let alert = UIAlertController(title: "Authorization Error", message: nil, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default, handler: nil)
@@ -75,5 +77,17 @@ class LogInVC: UIViewController {
         navigationController?.pushViewController(registerVC, animated: true)
     }
 
+    @IBAction func textFieldValueChanged(_ sender: Any?) {
+        guard let name = nameTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        if name == "" || password == "" {
+            signInButton.isEnabled = false
+            signInButton.alpha = 0.7
+        } else {
+            signInButton.isEnabled = true
+            signInButton.alpha = 1
+        }
+    }
+    
 }
 
